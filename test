@@ -61,8 +61,8 @@ local Tabs = {
 }
 
 Tabs.Main:AddButton({
-    Title = "Jual Ikan",
-    Description = "Perlu memegang ikan",
+    Title = "Teleport",
+    Description = "Teleport",
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(14.46, 2.70, -110,53)
     game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
     wait(2)
