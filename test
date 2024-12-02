@@ -1,0 +1,71 @@
+-- v1.6
+
+local ProtectPremium = true
+
+--<>----<>----<>----< Getting Services >----<>----<>----<>--
+AnalyticsService = game:GetService("AnalyticsService")
+CollectionService = game:GetService("CollectionService")
+DataStoreService = game:GetService("DataStoreService")
+HttpService = game:GetService("HttpService")
+Lighting = game:GetService("Lighting")
+MarketplaceService = game:GetService("MarketplaceService")
+Players = game:GetService("Players")
+ReplicatedFirst = game:GetService("ReplicatedFirst")
+ReplicatedStorage = game:GetService("ReplicatedStorage")
+RunService = game:GetService("RunService")
+ServerScriptService = game:GetService("ServerScriptService")
+ServerStorage = game:GetService("ServerStorage")
+SoundService = game:GetService("SoundService")
+StarterGui = game:GetService("StarterGui")
+StarterPack = game:GetService("StarterPack")
+StarterPlayer = game:GetService("StarterPlayer")
+TeleportService = game:GetService("TeleportService")
+TweenService = game:GetService("TweenService")
+Teams = game:GetService("Teams")
+VirtualUser = game:GetService("VirtualUser")
+Workspace = game:GetService("Workspace")
+UserInputService = game:GetService("UserInputService")
+VirtualInputManager = game:GetService("VirtualInputManager")
+ContextActionService = game:GetService("ContextActionService")
+GuiService = game:GetService("GuiService")
+print("ClientMonsterTools.lua loaded")
+
+
+--<>----<>----<>----< Anti Afk >----<>----<>----<>--
+game.Players.LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+    print("Roblox Tried to kick you but we didn't let them kick you :D")
+end)
+warn("[Anti Afk] - loaded successfully") 
+
+--<>----<>----<>----< Main Script >----<>----<>----<>--
+print("[KemilingHUB | Fisch]: loading...")
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "Fisch | KemilingHUB",
+    SubTitle = "Not Release",
+    TabWidth = 150,
+    Size = UDim2.fromOffset(600, 400),
+    Acrylic = false,
+    Theme = "Darker",
+    MinimizeKey = Enum.KeyCode.LeftControl
+})
+
+-- Creating tabs
+local Tabs = {
+    Teleports = Window:AddTab({ Title = "Teleports", Icon = "compass" })
+}
+
+Tabs.Main:AddButton({
+    Title = "Jual Ikan",
+    Description = "Perlu memegang ikan",
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(14.46, 2.70, -110,53)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+    wait(2)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+    end
+})
